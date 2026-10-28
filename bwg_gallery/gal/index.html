@@ -297,5 +297,89 @@ var starter_templates_zip_preview = {"AstColorPaletteVarPrefix":"--ast-global-co
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 </script>
-	</body>
+	<!-- Static gallery lightbox: self-contained, no WordPress AJAX needed -->
+<style id="evropa-static-lightbox-css">
+.ev-gallery-lightbox[hidden]{display:none!important}
+.ev-gallery-lightbox{position:fixed;inset:0;z-index:2147483647;background:rgba(8,12,18,.96);display:flex;align-items:center;justify-content:center;padding:70px 70px 54px;box-sizing:border-box}
+.ev-gallery-lightbox *{box-sizing:border-box}
+.ev-gallery-lightbox__image{display:block;max-width:100%;max-height:calc(100dvh - 125px);width:auto;height:auto;object-fit:contain;border-radius:3px;box-shadow:0 15px 60px rgba(0,0,0,.5)}
+.ev-gallery-lightbox__arrow,.ev-gallery-lightbox__close{position:absolute;display:grid;place-items:center;background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.22);border-radius:50%;padding:0;cursor:pointer;font:normal 35px/1 Arial,sans-serif;transition:background .2s}
+.ev-gallery-lightbox__arrow:hover,.ev-gallery-lightbox__close:hover{background:#e4002b}
+.ev-gallery-lightbox__arrow{top:50%;transform:translateY(-50%);width:52px;height:52px}
+.ev-gallery-lightbox__prev{left:14px}.ev-gallery-lightbox__next{right:14px}
+.ev-gallery-lightbox__close{right:20px;top:16px;width:43px;height:43px;font-size:30px}
+.ev-gallery-lightbox__count{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);color:#d5d9dd;font:500 13px Poppins,Arial,sans-serif;letter-spacing:1px}
+.ev-gallery-lightbox__error{color:white;text-align:center;display:none}
+body.ev-gallery-lightbox-open{overflow:hidden!important}
+#bwg_thumbnails_0 a.bwg_lightbox{cursor:zoom-in}
+@media(max-width:600px){.ev-gallery-lightbox{padding:70px 12px 60px}.ev-gallery-lightbox__arrow{width:43px;height:43px;font-size:30px;background:rgba(0,0,0,.55)}.ev-gallery-lightbox__prev{left:5px}.ev-gallery-lightbox__next{right:5px}.ev-gallery-lightbox__image{max-height:calc(100dvh - 140px)}}
+</style>
+<div class="ev-gallery-lightbox" id="ev-gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery" tabindex="-1" hidden>
+  <button type="button" class="ev-gallery-lightbox__close" aria-label="Close lightbox">&times;</button>
+  <button type="button" class="ev-gallery-lightbox__arrow ev-gallery-lightbox__prev" aria-label="Previous image">&#8249;</button>
+  <img class="ev-gallery-lightbox__image" alt="">
+  <p class="ev-gallery-lightbox__error">This image could not be loaded.</p>
+  <button type="button" class="ev-gallery-lightbox__arrow ev-gallery-lightbox__next" aria-label="Next image">&#8250;</button>
+  <div class="ev-gallery-lightbox__count" aria-live="polite"></div>
+</div>
+<script id="evropa-static-lightbox-js">
+(function(){
+  'use strict';
+  var root=document.getElementById('ev-gallery-lightbox');
+  if(!root)return;
+  var image=root.querySelector('.ev-gallery-lightbox__image');
+  var error=root.querySelector('.ev-gallery-lightbox__error');
+  var counter=root.querySelector('.ev-gallery-lightbox__count');
+  var links=Array.from(document.querySelectorAll('#bwg_thumbnails_0 a.bwg_lightbox[href]'));
+  var current=0, previousFocus=null, startX=null;
+  if(!links.length)return;
+  function show(index){
+    current=(index+links.length)%links.length;
+    var link=links[current];
+    var thumb=link.querySelector('img');
+    image.style.display='block';error.style.display='none';
+    image.alt=(thumb&&thumb.alt)||'Gallery photo '+(current+1);
+    image.onerror=function(){image.style.display='none';error.style.display='block'};
+    image.src=link.href;
+    counter.textContent=(current+1)+' / '+links.length;
+  }
+  function openAt(index){
+    previousFocus=document.activeElement;
+    root.hidden=false;document.body.classList.add('ev-gallery-lightbox-open');
+    show(index);root.querySelector('.ev-gallery-lightbox__close').focus();
+  }
+  function close(){
+    root.hidden=true;document.body.classList.remove('ev-gallery-lightbox-open');
+    image.removeAttribute('src');
+    if(previousFocus&&previousFocus.focus)previousFocus.focus();
+  }
+  document.addEventListener('click',function(event){
+    var link=event.target.closest&&event.target.closest('#bwg_thumbnails_0 a.bwg_lightbox[href]');
+    if(!link)return;
+    var index=links.indexOf(link);if(index<0)return;
+    event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+    openAt(index);
+  },true);
+  root.querySelector('.ev-gallery-lightbox__close').addEventListener('click',close);
+  root.querySelector('.ev-gallery-lightbox__prev').addEventListener('click',function(){show(current-1)});
+  root.querySelector('.ev-gallery-lightbox__next').addEventListener('click',function(){show(current+1)});
+  root.addEventListener('click',function(e){if(e.target===root)close()});
+  document.addEventListener('keydown',function(e){
+    if(root.hidden)return;
+    if(e.key==='Escape'){e.preventDefault();close()}
+    else if(e.key==='ArrowLeft'){e.preventDefault();show(current-1)}
+    else if(e.key==='ArrowRight'){e.preventDefault();show(current+1)}
+    else if(e.key==='Tab'){
+      var controls=Array.from(root.querySelectorAll('button'));
+      var next=controls.indexOf(document.activeElement)+(e.shiftKey?-1:1);
+      if(next<0||next>=controls.length){e.preventDefault();controls[(next+controls.length)%controls.length].focus()}
+    }
+  });
+  root.addEventListener('touchstart',function(e){startX=e.changedTouches[0].screenX},{passive:true});
+  root.addEventListener('touchend',function(e){if(startX===null)return;var dx=e.changedTouches[0].screenX-startX;if(Math.abs(dx)>55)show(current+(dx<0?1:-1));startX=null},{passive:true});
+})();
+</script>
+<!-- End static gallery lightbox -->
+
+</body>
 </html>
